@@ -1,36 +1,37 @@
 # TITLE
-These are the exercice files for the LinkedIn Learning course *Course Title*. The full course is available from [LinkedIn Learning][lil-course-url].
 
+These are the exercice files for the LinkedIn Learning course _Course Title_. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ## Installing
+
 ### To use these exercise files, you must have the following installed:
-   - A code editor ([VS Code](https://code.visualstudio.com/) is recommended)
-   - [Node.js](https://nodejs.org/en/)
- 
+
+- A code editor ([VS Code](https://code.visualstudio.com/) is recommended)
+- [Node.js](https://nodejs.org/en/)
+
 ### Install dependencies
 
 `npm install` or `npm i`
 
 ### Add Firebase to your JavaScript project
 
-#### In chapters 5 and 6 :  
+#### In chapters 5 and 6 :
 
 - you need add the firebase configuration to initialize Firebase and start to use the SDKs and services like Cloud Firestore, Cloud Storage, Firebase Auth and Firebase Hosting
 
 - To get the snippet for your app's Firebase config object, follow this link : [Add Firebase to your JavaScript project](https://firebase.google.com/docs/web/setup?authuser=0&hl=en#add-sdks-initialize)
 
+```js
+import { initializeApp } from 'firebase/app';
 
-        ```
-        import { initializeApp } from 'firebase/app';
+const firebaseConfig = {
+  // firebase configration HERE
+};
 
-        const firebaseConfig = {
-            // firebase configration HERE
-        };
+const app = initializeApp(firebaseConfig);
+```
 
-        const app = initializeApp(firebaseConfig);
-        ```  
-
-#### In chapters 6 and beyond:  
+#### In chapters 6 and beyond:
 
 - you need to update the React environment variables in the `.env` file
 
@@ -42,14 +43,11 @@ These are the exercice files for the LinkedIn Learning course *Course Title*. Th
 
 - To run the project successfully, please do the following steps :
 
-    - `npm install` or `npm i`
+  - `npm install` or `npm i`
 
-    - update `.env` file with your Firebase project settings 
+  - update `.env` file with your Firebase project settings
 
-
-
-[0]: # (Replace these placeholder URLs with actual course URLs)
-
+[0]: # 'Replace these placeholder URLs with actual course URLs'
 [lil-course-url]: https://www.linkedin.com/learning/
 [lil-thumbnail-url]: http://
 

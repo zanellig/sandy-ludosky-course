@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar.jsx';
+import Gallery from './components/Gallery.jsx';
+import UploadForm from './components/UploadForm';
+import { useState } from 'react';
 
 function App() {
+  const [isCollapsed, collapse] = useState(true);
+  const [input, setInput] = useState();
+  const handleOnChange = event => setInput(event.target.value);
+  const handleOnSubmit = () => {};
+
+  const toggle = () => {
+    collapse(!isCollapsed);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div
+        className="container mt-5 align-items-center justify-content-center"
+        align="center"
+      >
+        <button className="btn btn-success float-end" onClick={toggle}>
+          {isCollapsed ? '➕ Add' : '❌ Close'}
+        </button>
+        <div className="clearfix mb-4"></div>
+        <UploadForm
+          isVisible={!isCollapsed}
+          handleChange={handleOnChange}
+          handleSubmit={handleOnSubmit}
+        />
+        <Gallery />
+      </div>
     </div>
   );
 }

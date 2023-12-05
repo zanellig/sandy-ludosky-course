@@ -1,13 +1,13 @@
-const UploadForm = ({ isVisible, onChange, onSubmit, componentInput }) => {
+const UploadForm = props => {
   return (
-    isVisible && (
+    props.isVisible && (
       <>
         <p className="display-6 text-center mb-3">Upload Stock Image</p>
         <div className="mb-5 d-flex align-items-center justify-content-center">
           <form
             className="mb-2"
             style={{ textAlign: 'left' }}
-            onSubmit={onSubmit}
+            onSubmit={props.onSubmit}
           >
             <div className="mb-3">
               <input
@@ -16,8 +16,7 @@ const UploadForm = ({ isVisible, onChange, onSubmit, componentInput }) => {
                 name="title"
                 placeholder="title"
                 aria-describedby="text"
-                onChange={onChange}
-                value={componentInput.title}
+                onChange={props.onChange}
               />
             </div>
             <div className="mb-3">
@@ -25,8 +24,7 @@ const UploadForm = ({ isVisible, onChange, onSubmit, componentInput }) => {
                 type="file"
                 className="form-control"
                 name="file"
-                onChange={onChange}
-                value={componentInput.fakepath}
+                onChange={props.onChange}
               />
             </div>
             <button type="submit" className="btn btn-success float-end">
@@ -38,4 +36,5 @@ const UploadForm = ({ isVisible, onChange, onSubmit, componentInput }) => {
     )
   );
 };
+
 export default UploadForm;
